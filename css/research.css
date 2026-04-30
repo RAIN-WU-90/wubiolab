@@ -1,0 +1,197 @@
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #3E3A35;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+/* ================= UNIVERSAL SUBPAGE HERO ================= */
+.sub-hero {
+    position: relative;
+    height: var(--hero-h, 50vh);
+    min-height: 280px;
+
+    background: url("../fluorescence.jpg") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    transition: height 0.15s linear;
+}
+
+/* ================= 高级渐变遮罩（重点） ================= */
+.sub-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    /* ⭐中心清晰 + 边缘渐暗 */
+    background: radial-gradient(
+        circle at center,
+        rgba(240,242,245,0.01) 0%,
+        rgba(240,242,245,0.05) 70%,
+        rgba(240,242,245,0.10) 100%
+    );
+
+    z-index: 1;
+}
+
+/* ================= 再加一层“边缘暗角（更高级）” ================= */
+.sub-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0.00) 80%,
+        rgba(0,0,0,0.20) 100%
+    );
+
+    z-index: 2;
+}
+
+/* ================= 文字层 ================= */
+.sub-hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.sub-hero-text h1 {
+    color: #3E3A35;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.sub-hero-text p {
+    color: #6B5E4A;
+    font-size: 18px;
+}
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    z-index: 1100;
+}
+
+.nav-right {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #F8F8FF;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+/*正文的时候bar转黑字*/
+.navbar.scrolled .nav-right a {
+    color: #3E3A35;
+}
+.navbar.scrolled .nav-right a.active {
+    color: #B85C1A;
+}
+.top-glass-bar.scrolled {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+}
+
+.nav-right a:hover {
+    color: #B85C1A;
+    transform: scale(1.08);
+}
+
+.nav-right a.active {
+    color: #B85C1A;
+    font-weight: 700;
+}
+
+.navbar,
+.nav-right {
+    z-index: 1100;
+}
+
+.top-glass-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+    pointer-events: none;
+}
+/* ================= CENTER TEXT ================= */
+.sub-hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.sub-hero-text h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #F8F8FF;
+    margin: 0 0 10px;
+}
+
+.sub-hero-text p {
+    font-size: 18px;
+    color: #F8F8FF;
+    margin: 0;
+}
+
+/* ===== CONTENT ===== */
+.research-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.research-container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.research-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.research-container strong {
+    color: #111;
+}
+
+/* =========================== top left logo =========================== */
+.wu-logo {
+    position: fixed;
+    top: 3px;
+    left: 28px;
+    z-index: 1200;
+}
+
+.wu-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}

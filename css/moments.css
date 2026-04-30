@@ -1,0 +1,207 @@
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ================= UNIVERSAL SUBPAGE HERO ================= */
+.sub-hero {
+    position: relative;
+    height: var(--hero-h, 50vh);
+    min-height: 280px;
+
+    background: url("../moments_pic2.png") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    transition: height 0.15s linear;
+}
+
+/* ================= 高级渐变遮罩（重点） ================= */
+.sub-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    /* ⭐中心清晰 + 边缘渐暗 */
+    background: radial-gradient(
+        circle at center,
+        rgba(240,242,245,0.05) 0%,
+        rgba(240,242,245,0.12) 45%,
+        rgba(240,242,245,0.28) 100%
+    );
+
+    z-index: 1;
+}
+
+/* ================= 再加一层“边缘暗角（更高级）” ================= */
+.sub-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0.00) 50%,
+        rgba(0,0,0,0.20) 100%
+    );
+
+    z-index: 2;
+}
+
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    z-index: 1100;
+}
+
+.nav-right {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #6B5E4A;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-right a:hover {
+    color: #A63D1E;
+    transform: scale(1.08);
+}
+
+/* 当前页面 */
+.nav-right a.active {
+    color: #B85C1A;
+    font-weight: 700;
+}
+
+.top-glass-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+    pointer-events: none;
+}
+/* ================= CENTER TEXT ================= */
+.sub-hero-text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    top: -20px;
+}
+
+.sub-hero-text h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #3E3A35;
+    margin: 0 0 4px;
+}
+
+.sub-hero-text p {
+    font-size: 18px;
+    margin: 0;
+    color: #606060;
+}
+
+/* ===================================== CONTENT ============================== */
+.moments-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 24px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+}
+
+/* 每张卡片 */
+.moment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 图片 */
+.moment-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0px; /* 直角 */
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+/* hover */
+.moment-card:hover img {
+    transform: scale(1.03);
+}
+
+/* 标题 */
+.moment-card h3 {
+    width: 100%;
+    margin: 18px 0 10px;
+    font-size: 22px;
+    color: #3E3A35;
+    text-align: center;
+}
+/* 描述 */
+.moment-card p {
+    width: 85%;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    text-align: center;
+}
+
+/*自适应手机*/
+@media (max-width: 768px) {
+    .moments-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*照片位置*/
+.img-2604-inj {
+    transform: translateY(0, 500px);/*水平，垂直*/
+}
+.img-2602-meeting {
+    transform: translateY(0, 20px);/*水平，垂直*/
+}
+
+/* =========================== top left logo =========================== */
+.wu-logo {
+    position: fixed;
+    top: 3px;
+    left: 28px;
+    z-index: 1200;
+}
+
+.wu-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
