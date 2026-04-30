@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Join</title>
+<link rel="stylesheet" href="css/join.css">
+</head>
+
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="top-glass-bar"></div>
+
+<div class="wu-logo">
+    <img src="./home/wul-logo-purple.png" alt="WU Lab Logo">
+</div>
+    
+<div class="sub-hero">
+
+    <div class="navbar">
+        <div class="nav-right">
+            <a href="team.html">Team</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="resources.html">Resources</a>
+            <a href="moments.html">Moments</a>
+            <a href="join.html" class="active">Join</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+
+    <div class="sub-hero-text">
+        <h1>Join us</h1>
+        <p>With dream.</p>
+    </div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="join-page">
+
+    <!-- 上面文字 -->
+    <div class="join-text">
+    <p>
+       We are seeking highly motivated students and researchers who are curious and excited to tackle fundamental questions in Spatial Aging Biology. Prior experience in molecular biology, neuroscience, bioinformatics, or related fields is welcome but not required. What matters most is creativity, persistence, and a strong interest in discovery.
+    </p>
+    
+    <p>
+       If you are passionate about science and interested in exploring the frontier of spatial aging biology, we encourage you to reach out and join us in building an exciting and impactful research program.
+    </p>
+    
+    <p>
+    Please send your inquiry to 
+    <a href="mailto:jieyu.wu@nju.edu.cn" class="email-link">
+        jieyu.wu@nju.edu.cn
+    </a>
+    for available positions, from rotation student, PhD student, postdocs to research scientists.
+    </p>
+    </div>
+
+    <div class="join-container">
+       <!-- 左边图片 -->
+    <div class="join-left">
+        <img src="join-map.png" alt="map">
+    </div>
+
+    <!-- 右边信息 -->
+    <div class="join-right">
+        <h2>Contact</h2>
+
+        <p>
+            <strong>Address</strong><br>
+            Nanjing University, Xianlin Avenue 163<br>
+            Qixia District, Nanjing<br>
+            Jiangsu, China<br>
+        </p>
+
+        <p>
+            <strong>Email</strong><br>
+            jieyu.wu@nju.edu.cn
+        </p>
+
+        <p>
+            <strong>Open Positions</strong><br>
+            We are recruiting:
+            <br>• PhD students
+            <br>• Postdoctoral fellows
+            <br>• Research assistants
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+const hero = document.querySelector(".sub-hero");
+const navbar = document.querySelector(".navbar");
+const glassBar = document.querySelector(".top-glass-bar");
+
+function updateHero() {
+    const scrollY = window.scrollY;
+
+    const maxScroll = 300;
+    const maxH = 50;
+    const minH = 33;
+
+    const progress = Math.min(scrollY / maxScroll, 1);
+    const height = maxH - (maxH - minH) * progress;
+
+    hero.style.setProperty("--hero-h", height + "vh");
+
+    if (scrollY > 180) {
+        navbar.classList.add("scrolled");
+        if (glassBar) glassBar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+        if (glassBar) glassBar.classList.remove("scrolled");
+    }
+}
+
+updateHero();
+window.addEventListener("scroll", updateHero);
+</script>
+    
+</body>
+</html>
