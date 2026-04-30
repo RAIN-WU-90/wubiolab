@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Publications</title>
+<link rel="stylesheet" href="css/publications.css">
+</head>
+
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="top-glass-bar"></div>
+                               
+<div class="wu-logo">
+    <img src="./home/wul-logo-purple.png" alt="WU Lab Logo">
+</div>
+    <div class="sub-hero">
+
+    <div class="navbar">
+        <div class="nav-right">
+            <a href="team.html">Team</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html" class="active">Publications</a>
+            <a href="resources.html">Resources</a>
+            <a href="moments.html">Moments</a>
+            <a href="join.html">Join</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+
+    <div class="sub-hero-text">
+        <h1>Publications</h1>
+        <p>What is published is memory. What you create next is life.</p>
+    </div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="publications-container">
+
+    <div class="paper">
+        <a href="#" class="title">
+            Neuronal Ciliary Deterioration Elicits a Novel Glial Response during Aging
+        </a>
+        <div class="journal"> <em>Under submission</em>, 2026</div>
+        <div class="authors"><strong>JY Wu</strong>, A Zhang, EJ Soderblom, D Yan</div>
+     </div>
+
+    <div class="paper">
+        <a href="#" class="title">
+            Heat Shock Proteins Function as Signaling Molecules to Mediate Neuron-Glia Communication in <em>C. elegans</em> During Aging
+        </a>
+        <div class="journal"> <em>Nature Neuroscience</em>, 2025</div>
+        <div class="authors"><strong>JY Wu</strong>, VR Yarmey, OJ Yang, EJ Soderblom, A S-M, D Yan</div>
+     </div>
+    
+        <div class="paper">
+        <a href="#" class="title">
+           GABA signaling triggered by TMC-1/Tmc delays neuronal aging by inhibiting the PKC pathway in <em>C. elegans</em>
+        </a>
+        <div class="journal"> <em>Science Advances</em>, 2022</div>
+        <div class="authors"><strong>JY Wu</strong>, LY Wang, JF Ervin, SHJ Wang, EJ Soderblom, D Ko, D Yan</div>
+     </div>
+
+        <div class="paper">
+        <a href="#" class="title">
+           PHA-4/FoxA senses nucleolar stress to regulate lipid accumulation in <em>C. elegans</em>
+        </a>
+        <div class="journal"> <em>Nature Communications</em>, 2018</div>
+        <div class="authors"><strong>JY Wu*</strong>, X Jiang*, YM Li, TT Zhu, JJ Zhang, ZG Zhang, LQ Zhang, YR Zhang, YL Wang, XJ Zou, B Liang (* Co-first)</div>
+     </div>
+    
+        <div class="paper">
+        <a href="#" class="title">
+            S100A11 Promotes Liver Steatosis via FOXO1-Mediated Autophagy and Lipogenesis
+        </a>
+        <div class="journal"> <em>Cell Mol Gastroenterol Hepatol</em>, 2021</div>
+        <div class="authors">LQ Zhang*, ZG Zhang*, CB Li, TT Zhu, J Gao, H Zhou, YZ Zheng, Q Chang, MS Wang, <strong>JY Wu</strong>, LY Ran, YJ Wu, HL Miao, XJ Zou, B Liang (* Co-first)</div>
+     </div>
+
+        <div class="paper">
+        <a href="#" class="title">
+            Iron Overload Coordinately Promotes Ferritin Expression and Fat Accumulation in <em>C. elegans</em>
+        </a>
+        <div class="journal"> <em>Genetics</em>, 2016</div>
+        <div class="authors">HZ Wang*, X Jiang*, <strong>JY Wu</strong>, LQ Zhang, JF Huang, YR Zhang, XJ Zou, B Liang (* Co-first)</div>
+     </div>
+
+        <div class="paper">
+        <a href="#" class="title">
+           Pu-erh tea down-regulates sterol regulatory element-binding protein and stearyol-CoA desaturase to reduce fat storage in <em>C. elegans</em>
+        </a>
+        <div class="journal"> <em>PLoS One</em>, 2015</div>
+        <div class="authors">YH Ding, XJ Zou, X Jiang, <strong>JY Wu</strong>, YR Zhang, D Chen, B Liang</div>
+     </div>
+</div>
+
+<script>
+const hero = document.querySelector(".sub-hero");
+const navbar = document.querySelector(".navbar");
+const glassBar = document.querySelector(".top-glass-bar");
+
+function updateHero() {
+    const scrollY = window.scrollY;
+
+    const maxScroll = 300;
+    const maxH = 50;
+    const minH = 33;
+
+    let progress = Math.min(scrollY / maxScroll, 1);
+    let height = maxH - (maxH - minH) * progress;
+
+    hero.style.setProperty("--hero-h", height + "vh");
+
+    // ⭐ 同时切换导航和玻璃条
+    if (scrollY > 180) {
+        navbar.classList.add("scrolled");
+        glassBar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+        glassBar.classList.remove("scrolled");
+    }
+}
+
+updateHero();
+window.addEventListener("scroll", updateHero);
+</script>
+    
+</body>
+</html>

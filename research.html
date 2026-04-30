@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Research</title>
+<link rel="stylesheet" href="css/research.css">
+</head>
+
+<body>
+
+<!-- ===== HERO ===== --> 
+<div class="top-glass-bar"></div>
+    
+<div class="wu-logo">
+    <img src="./home/wul-logo-purple.png" alt="WU Lab Logo">
+</div>
+    
+    <div class="sub-hero">
+    <div class="navbar">
+        <div class="nav-right">
+            <a href="team.html">Team</a>
+            <a href="research.html" class="active">Research</a> 
+            <a href="publications.html">Publications</a>
+            <a href="resources.html">Resources</a>
+            <a href="moments.html">Moments</a>
+            <a href="join.html">Join</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+
+    <div class="sub-hero-text">
+        <h1>Research</h1>
+        <p>Aging is inevitable. Understanding it is not.</p>
+    </div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="research-container">
+
+    <p>
+     <strong>Our lab is interested in a fundamental question: how do cells communicate across space to shape nervous system aging and age-related diseases? </strong>We focus on the nervous system as a central hub of organismal aging, and aim to uncover how interactions between neurons, glial cells, and peripheral tissues collectively drive functional decline and disease progression.
+    </p>
+
+    <p>
+    Aging is not merely a cell-intrinsic process, but is actively coordinated through intercellular and systemic signaling.
+    My previous work has contributed to this emerging view by identifying novel mechanisms of cell–cell communication in aging. 
+    For example, we demonstrated that heat shock proteins (HSPs) can act as signaling molecules transmitted from aged neurons to glial cells via extracellular vesicles, 
+    thereby modulating brain aging. We also uncovered a new role for the ion channel TMC1 in delaying neuronal aging through extrasynaptic GABA signaling. 
+    These studies illustrate how molecular signals are propagated across cells and tissues to influence nervous system aging.
+    </p>
+    
+    <p>
+    Building on these discoveries, the <strong>Spatial Aging Biology & Disease Lab</strong> seeks to establish a new conceptual and technological framework to study aging in a spatial and systems context. 
+    We combine cutting-edge approaches, including proximity labeling–based cell- and tissue-specific proteomics, multi-omics sequencing, and large-scale genetic screening, with classical molecular biology, 
+    biochemistry, and computational analysis. Using multiple model systems such as <em>C. elegans</em>, mouse models, and organoids, we aim to uncover conserved principles as well as context-specific mechanisms of nervous system aging.
+    </p>
+    
+    <p>
+    <strong>Our research directions mainly focus on:</strong><br>
+    1.	Neuron-glia communication in brain aging and neurodegeneration.<br>
+    2.	Brain-periphery interactions and their role in nervous system aging.<br>
+    3.	Extracellular vesicle (EV) mediated signaling across cells/tissues/individuals during aging.
+
+    </p>
+
+</div>
+
+<script>
+const hero = document.querySelector(".sub-hero");
+const navbar = document.querySelector(".navbar");
+const glassBar = document.querySelector(".top-glass-bar");
+
+function updateHero() {
+    const scrollY = window.scrollY;
+
+    const maxScroll = 300;
+    const maxH = 50;
+    const minH = 33;
+
+    const progress = Math.min(scrollY / maxScroll, 1);
+    const height = maxH - (maxH - minH) * progress;
+
+    hero.style.setProperty("--hero-h", height + "vh");
+
+    if (scrollY > 180) {
+        navbar.classList.add("scrolled");
+        if (glassBar) glassBar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+        if (glassBar) glassBar.classList.remove("scrolled");
+    }
+}
+
+updateHero();
+window.addEventListener("scroll", updateHero);
+</script>
+    
+</body>
+</html>

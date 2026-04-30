@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moments</title>
+<link rel="stylesheet" href="css/moments.css">
+</head>
+
+<body>
+ 
+<!-- ===== HERO ===== -->
+<div class="top-glass-bar"></div>
+ 
+<div class="wu-logo">
+    <img src="./home/wul-logo-purple.png" alt="WU Lab Logo">
+</div>
+ <div class="sub-hero">
+
+    <div class="navbar">
+        <div class="nav-right">
+            <a href="team.html">Team</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="resources.html">Resources</a>
+            <a href="moments.html" class="active">Moments</a>
+            <a href="join.html">Join</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+
+    <div class="sub-hero-text">
+        <h1>Moments</h1>
+        <p>All moments are deserved to be documented.</p>
+    </div>
+
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="moments-container">
+
+    <div class="moment-card">
+        <img src="moment/2026-02.jpeg" class="img-2602-meeting" alt="">
+        <h3>Feb 2026</h3>
+        <p>The first lab meeting in WU lab. </p>
+    </div>
+
+    <div class="moment-card">
+        <img src="moment/2026-04.png" class="img-2604-inj" alt="">
+        <h3>April 2026</h3>
+        <p>Guess who get the first transgenic animal in our lab.</p>
+    </div>
+
+    <div class="moment-card">
+        <img src="moment/2026-01.jpeg" class="img-2601-lab" alt="">
+        <h3>Jan 2026</h3>
+        <p>A new lab at NJU.</p>
+    </div>
+
+    <div class="moment-card">
+        <img src="moment/2026-04.jpg" class="img-2604-lab" alt="">
+        <h3>April 2026</h3>
+        <p>Our lab is fully equipped.</p>
+    </div>
+
+</div>
+ 
+<script>
+const hero = document.querySelector(".sub-hero");
+
+function updateHero() {
+    const scrollY = window.scrollY;
+
+    const maxScroll = 300; // 滚动多少到最小
+    const maxH = 50;
+    const minH = 33;
+
+    let progress = Math.min(scrollY / maxScroll, 1);
+
+    let height = maxH - (maxH - minH) * progress;
+
+    hero.style.setProperty("--hero-h", height + "vh");
+}
+
+// 初始化（关键！！！）
+updateHero();
+
+// 滚动监听
+window.addEventListener("scroll", updateHero);
+</script>
+ 
+</body>
+</html>
